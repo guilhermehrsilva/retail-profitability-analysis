@@ -1,39 +1,40 @@
-# 📊 Global Superstore - Análise de Eficiência Comercial e Lucratividade
+# Retail Profitability Analysis
 
-[Dashboard Preview](dashboard/Dashboard.pdf)
-*(Nota: Visualize o PDF para ver o layout final em alta resolução)*
+**Sales are high but margins aren't growing — where exactly is the business losing money?**
 
-## 🏢 Sobre o Projeto
-Este projeto simula um cenário real de Business Intelligence onde uma rede varejista global precisava identificar gargalos de lucratividade. Apesar do alto volume de vendas, a margem líquida da empresa não acompanhava o crescimento.
+BI project that dissects profitability across a global retail network, uncovering which product categories, discount levels, and markets are destroying margin despite strong revenue.
 
-O objetivo foi transformar dados brutos de transações em um dashboard estratégico para apoiar a tomada de decisão da diretoria, focando em responder: **"Onde estamos perdendo dinheiro?"**
+## Key Results
 
-## 📂 Estrutura do Repositório
-* `/Dataset`: Contém os dados brutos (CSV) com histórico de transações globais.
-* `/ETL`: Planilhas de apoio utilizadas para validação de qualidade de dados e auditoria inicial (Excel).
-* `/Dashboard`: Arquivo fonte do Power BI (`.pbix`) e exportação em PDF.
+| Metric | Value |
+|--------|-------|
+| Scope | Global retail transactions |
+| Problem Found | Tables & Bookcases show consistent negative margins |
+| Discount Threshold | Discounts >20% correlate with negative profitability |
+| Seasonal Insight | Year-end sales spikes don't increase profit (aggressive promos) |
+| Geo Analysis | Underperforming markets identified via mapping |
 
-## 🛠️ Tecnologias e Ferramentas
-* **Microsoft Power BI:** Ferramenta principal para ingestão, modelagem e visualização.
-* **Power Query:** Utilizado para limpeza de dados (ETL), padronização de nomes de países e correção de tipagem de datas.
-* **DAX (Data Analysis Expressions):** Criação de medidas calculadas para *Margem de Lucro %*, *Variação YoY* e *Faturamento Total*.
-* **Excel:** Utilizado para *Quick Audit* (auditoria rápida) e validação dos números antes da carga no BI.
-* **Figma/Canva:** Design de background e identidade visual (Logo: Guilherme Risson Analytics).
+## Stack
 
-## ⚙️ Etapas de Desenvolvimento
-1.  **Coleta e ETL:** Importação do arquivo `superstore_sales.csv`. Tratamento de erros de locale (ponto vs vírgula) e verificação de nulos.
-2.  **Modelagem de Dados:** Criação da Tabela Calendário (dCalendario) para análises temporais precisas.
-3.  **Visualização (Data Viz):**
-    * Implementação de **Dark Mode** para visualização executiva.
-    * Uso de **Formatação Condicional Divergente**: Vermelho para valores negativos (Prejuízo) e Azul/Verde para positivos.
-    * Mapa Geoespacial para identificação de mercados ineficientes.
-4.  **UX/UI:** Criação de filtros laterais e cartões de KPI com alto contraste.
+`Power BI` · `Power Query` · `DAX`
 
-## 💡 Principais Insights
-* **Produtos Ofensores:** As categorias "Tables" e "Bookcases" apresentam performance negativa consistente, exigindo revisão de preços ou custos.
-* **Impacto dos Descontos:** Foi identificada uma correlação direta entre descontos acima de 20% e margem negativa.
-* **Sazonalidade:** O final do ano apresenta picos de venda, mas o lucro não cresce na mesma proporção devido a promoções agressivas.
+## What I Built
 
----
-**Autor:** Guilherme Risson
-*Projeto desenvolvido para portfólio de Análise de Dados.*
+1. **Margin Decomposition** — DAX measures for profit margin %, YoY variation, and category-level P&L
+2. **Discount Impact Analysis** — Demonstrated that discounts >20% systematically erode margins
+3. **Category Deep-Dive** — Identified Tables and Bookcases as persistent loss-makers requiring price/cost review
+4. **Geospatial Mapping** — Located underperforming markets globally
+5. **Dashboard UX** — Dark-mode design with divergent conditional formatting (red = loss, green = gain)
+
+## Project Structure
+
+```
+├── Dashboard/      # Power BI file (.pbix) + PDF preview
+├── Dataset/        # Transaction data (CSV)
+├── ETL/            # Excel support files for data quality
+└── README.md
+```
+
+## Dashboard Preview
+
+[📄 View Dashboard PDF](Dashboard/Dashboard.pdf)
